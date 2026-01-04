@@ -85,22 +85,6 @@ export default function LeaderboardPage() {
             </div>
         </div>
       </main>
-
-      {viewedProfile && (
-        <PublicProfileModal 
-          user={viewedProfile}
-          onClose={() => setViewedProfile(null)}
-          onCompare={handleProfileCompare}
-        />
-      )}
-
-      {comparingUser && (
-        <CompareModal 
-          userA={user}
-          userB={comparingUser}
-          onClose={() => setComparingUser(null)}
-        />
-      )}
     </div>
   );
 }

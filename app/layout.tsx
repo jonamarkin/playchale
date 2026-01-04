@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { PlayChaleProvider } from "../components/PlayChaleProvider";
 import { ThemeProvider } from "../components/ThemeProvider";
+import GlobalModals from "../components/GlobalModals";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className={plusJakartaSans.className}>
         <ThemeProvider defaultTheme="dark" storageKey="playchale-theme">
           <PlayChaleProvider>
+            <GlobalModals />
             {children}
           </PlayChaleProvider>
         </ThemeProvider>
