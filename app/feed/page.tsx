@@ -25,7 +25,7 @@ export default function FeedPage() {
   }, [upcomingGames, feedView]);
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 pt-24 selection:bg-orange-500/20">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 md:pt-24 pt-20 pb-32 md:pb-8 selection:bg-orange-500/20">
       <Navigation />
       <main className="max-w-6xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
