@@ -42,43 +42,43 @@ export default function LeaderboardPage() {
                 ))}
             </div>
             
-            <div className="bg-white dark:bg-slate-900 rounded-[40px] shadow-2xl shadow-slate-200/50 dark:shadow-slate-900/50 border border-slate-100 dark:border-slate-800 overflow-hidden">
+            <div className="bg-white dark:bg-slate-900 rounded-[32px] sm:rounded-[40px] shadow-2xl shadow-slate-200/50 dark:shadow-slate-900/50 border border-slate-100 dark:border-slate-800 overflow-hidden">
                 {leaderboardData.map((player, idx) => (
                 <div 
                     key={player.id} 
                     onClick={() => setViewedProfile(player)}
-                    className="flex items-center justify-between p-8 border-b last:border-0 border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50 cursor-pointer transition-all group"
+                    className="flex items-center justify-between p-4 sm:p-8 border-b last:border-0 border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50 cursor-pointer transition-all group"
                 >
-                    <div className="flex items-center gap-8">
-                    <div className={`w-10 text-3xl font-black italic tracking-tighter ${idx === 0 ? 'text-orange-500' : 'text-slate-200 dark:text-slate-700'}`}>
-                        0{idx + 1}
+                    <div className="flex items-center gap-4 sm:gap-8 min-w-0">
+                      <div className={`w-6 sm:w-10 text-xl sm:text-3xl font-black italic tracking-tighter shrink-0 ${idx === 0 ? 'text-orange-500' : 'text-slate-200 dark:text-slate-700'}`}>
+                          0{idx + 1}
+                      </div>
+                      <div className="relative shrink-0">
+                          <img src={player.avatar} className="w-12 h-12 sm:w-16 sm:h-16 rounded-[18px] sm:rounded-[22px] border-2 sm:border-4 border-white dark:border-slate-800 shadow-xl object-cover group-hover:scale-110 transition-transform" alt={player.name} />
+                          {idx === 0 && (
+                          <div className="absolute -top-2 -right-2 sm:-top-3 -right-3 bg-orange-500 text-white p-1 sm:p-1.5 rounded-lg sm:rounded-xl shadow-lg ring-2 ring-white dark:ring-slate-900">
+                              <Trophy className="w-3 h-3 sm:w-4 sm:h-4" />
+                          </div>
+                          )}
+                      </div>
+                      <div className="min-w-0">
+                          <div className="flex items-center gap-2">
+                              <span className="text-base sm:text-xl font-black text-slate-900 dark:text-white block tracking-tight truncate">{player.name}</span>
+                              {player.id === user.id && <span className="shrink-0 bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 text-[8px] font-black uppercase tracking-widest px-1.5 py-0.5 rounded-full">You</span>}
+                          </div>
+                          <span className="text-[9px] sm:text-[10px] text-slate-400 dark:text-slate-500 font-black uppercase tracking-[0.2em] mt-1 block truncate">
+                            {player.handle} • {player.trustScore}% Trust
+                          </span>
+                      </div>
                     </div>
-                    <div className="relative">
-                        <img src={player.avatar} className="w-16 h-16 rounded-[22px] border-4 border-white dark:border-slate-800 shadow-xl object-cover group-hover:scale-110 transition-transform" alt={player.name} />
-                        {idx === 0 && (
-                        <div className="absolute -top-3 -right-3 bg-orange-500 text-white p-1.5 rounded-xl shadow-lg ring-2 ring-white dark:ring-slate-900">
-                            <Trophy className="w-4 h-4" />
-                        </div>
-                        )}
-                    </div>
-                    <div>
-                        <div className="flex items-center gap-2">
-                            <span className="text-xl font-black text-slate-900 dark:text-white block tracking-tight">{player.name}</span>
-                            {player.id === user.id && <span className="bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 text-[8px] font-black uppercase tracking-widest px-1.5 py-0.5 rounded-full">You</span>}
-                        </div>
-                        <span className="text-[10px] text-slate-400 dark:text-slate-500 font-black uppercase tracking-[0.2em] mt-1">
-                        {player.handle} • {player.trustScore}% Trust • {player.activeSportStat.gamesPlayed} Gms
-                        </span>
-                    </div>
-                    </div>
-                    <div className="flex flex-col items-end gap-2">
-                    <div className="text-3xl font-black text-slate-900 dark:text-white tracking-tighter italic">{player.score}</div>
-                    <div className="w-32 bg-slate-100 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden border border-slate-50 dark:border-slate-700">
-                        <div 
-                        className="bg-gradient-to-r from-orange-400 to-orange-600 h-full shadow-lg transition-all duration-1000" 
-                        style={{ width: `${player.score}%` }}
-                        ></div>
-                    </div>
+                    <div className="flex flex-col items-end gap-1 sm:gap-2 shrink-0 ml-4">
+                      <div className="text-xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tighter italic">{player.score}</div>
+                      <div className="hidden sm:block w-32 bg-slate-100 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden border border-slate-50 dark:border-slate-700">
+                          <div 
+                          className="bg-gradient-to-r from-orange-400 to-orange-600 h-full shadow-lg transition-all duration-1000" 
+                          style={{ width: `${player.score}%` }}
+                          ></div>
+                      </div>
                     </div>
                 </div>
                 ))}

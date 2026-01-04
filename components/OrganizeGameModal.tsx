@@ -35,8 +35,14 @@ const OrganizeGameModal: React.FC<OrganizeGameModalProps> = ({ onClose, onSave, 
   }, [initialData]);
 
   return (
-    <div className="fixed inset-0 bg-black/70 backdrop-blur-md z-[110] flex items-center justify-center p-4 overflow-y-auto">
-      <div className="bg-white dark:bg-slate-900 rounded-[32px] w-full max-w-xl shadow-2xl animate-in fade-in zoom-in duration-300">
+    <div 
+      className="fixed inset-0 bg-black/70 backdrop-blur-md z-[110] flex items-center justify-center p-4 overflow-y-auto"
+      onClick={onClose}
+    >
+      <div 
+        className="bg-white dark:bg-slate-900 rounded-[32px] w-full max-w-xl shadow-2xl animate-in fade-in zoom-in duration-300"
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className="p-8 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-slate-950">
           <div>
             <h2 className="text-2xl font-black text-slate-900 dark:text-white leading-tight">{initialData ? 'Update Game' : 'Host a Game'}</h2>

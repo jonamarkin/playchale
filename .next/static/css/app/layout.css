@@ -773,8 +773,8 @@ video {
 .-top-10 {
   top: -2.5rem;
 }
-.-top-3 {
-  top: -0.75rem;
+.-top-2 {
+  top: -0.5rem;
 }
 .bottom-0 {
   bottom: 0px;
@@ -817,6 +817,9 @@ video {
 }
 .z-50 {
   z-index: 50;
+}
+.z-\[1000\] {
+  z-index: 1000;
 }
 .z-\[100\] {
   z-index: 100;
@@ -870,6 +873,9 @@ video {
 }
 .mb-8 {
   margin-bottom: 2rem;
+}
+.ml-4 {
+  margin-left: 1rem;
 }
 .mt-1 {
   margin-top: 0.25rem;
@@ -1084,6 +1090,9 @@ video {
 .flex-shrink-0 {
   flex-shrink: 0;
 }
+.shrink-0 {
+  flex-shrink: 0;
+}
 .flex-grow {
   flex-grow: 1;
 }
@@ -1246,9 +1255,6 @@ video {
 }
 .rounded-\[20px\] {
   border-radius: 20px;
-}
-.rounded-\[22px\] {
-  border-radius: 22px;
 }
 .rounded-\[24px\] {
   border-radius: 24px;
@@ -1780,6 +1786,10 @@ video {
 }
 .text-\[9px\] {
   font-size: 9px;
+}
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 .text-lg {
   font-size: 1.125rem;
@@ -2711,6 +2721,10 @@ body:is(.dark *) {
     right: -0.5rem;
   }
 
+  .sm\:-top-3 {
+    top: -0.75rem;
+  }
+
   .sm\:top-3 {
     top: 0.75rem;
   }
@@ -2723,8 +2737,16 @@ body:is(.dark *) {
     margin-bottom: 1.5rem;
   }
 
+  .sm\:block {
+    display: block;
+  }
+
   .sm\:inline {
     display: inline;
+  }
+
+  .sm\:h-16 {
+    height: 4rem;
   }
 
   .sm\:h-2 {
@@ -2739,8 +2761,20 @@ body:is(.dark *) {
     height: 0.875rem;
   }
 
+  .sm\:h-4 {
+    height: 1rem;
+  }
+
   .sm\:h-44 {
     height: 11rem;
+  }
+
+  .sm\:w-10 {
+    width: 2.5rem;
+  }
+
+  .sm\:w-16 {
+    width: 4rem;
   }
 
   .sm\:w-2 {
@@ -2753,6 +2787,10 @@ body:is(.dark *) {
 
   .sm\:w-3\.5 {
     width: 0.875rem;
+  }
+
+  .sm\:w-4 {
+    width: 1rem;
   }
 
   .sm\:w-auto {
@@ -2775,6 +2813,18 @@ body:is(.dark *) {
     flex-direction: row;
   }
 
+  .sm\:gap-2 {
+    gap: 0.5rem;
+  }
+
+  .sm\:gap-8 {
+    gap: 2rem;
+  }
+
+  .sm\:rounded-\[22px\] {
+    border-radius: 22px;
+  }
+
   .sm\:rounded-\[24px\] {
     border-radius: 24px;
   }
@@ -2787,12 +2837,20 @@ body:is(.dark *) {
     border-radius: 36px;
   }
 
+  .sm\:rounded-\[40px\] {
+    border-radius: 40px;
+  }
+
   .sm\:rounded-\[44px\] {
     border-radius: 44px;
   }
 
   .sm\:rounded-xl {
     border-radius: 0.75rem;
+  }
+
+  .sm\:border-4 {
+    border-width: 4px;
   }
 
   .sm\:p-1\.5 {
@@ -2805,6 +2863,10 @@ body:is(.dark *) {
 
   .sm\:p-7 {
     padding: 1.75rem;
+  }
+
+  .sm\:p-8 {
+    padding: 2rem;
   }
 
   .sm\:px-5 {
@@ -2825,6 +2887,11 @@ body:is(.dark *) {
   .sm\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .sm\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   .sm\:text-7xl {

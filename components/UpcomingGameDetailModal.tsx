@@ -41,8 +41,14 @@ const UpcomingGameDetailModal: React.FC<UpcomingGameDetailModalProps> = ({
   const isPerformanceSport = game.sport === SportType.ATHLETICS;
 
   return (
-    <div className="fixed inset-0 bg-black/80 backdrop-blur-xl z-[100] flex items-center justify-center p-4">
-      <div className="bg-white dark:bg-slate-900 rounded-[40px] w-full max-w-4xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300 flex flex-col md:flex-row max-h-[90vh]">
+    <div 
+      className="fixed inset-0 bg-black/80 backdrop-blur-xl z-[100] flex items-center justify-center p-4"
+      onClick={onClose}
+    >
+      <div 
+        className="bg-white dark:bg-slate-900 rounded-[40px] w-full max-w-4xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300 flex flex-col md:flex-row max-h-[90vh]"
+        onClick={(e) => e.stopPropagation()}
+      >
         
         {/* Left Side: Visual Summary */}
         <div className={`md:w-1/3 p-8 flex flex-col items-center justify-center text-center relative overflow-hidden transition-colors ${isCompleted ? 'bg-slate-800 dark:bg-slate-950' : 'bg-slate-950'}`}>
