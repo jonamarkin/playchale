@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  @apply bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-white transition-colors duration-300 min-h-screen;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.sport-card-gradient {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
